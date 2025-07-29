@@ -1,5 +1,5 @@
 
-const UserLayout = () => {
+const Footer = () => {
     return (
         <div>
             
@@ -7,4 +7,4 @@ const UserLayout = () => {
     );
 };
 
-export default UserLayout;
+export default Footer;
