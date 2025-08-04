@@ -4,7 +4,7 @@ import { FaXTwitter } from "react-icons/fa6";
 
 const TopBar = () => {
     return (
-        <div className="bg-[#ff084a] py-3 text-white">
+        <div className="bg-alpha py-3 text-white">
             <div className="container px-2 mx-auto flex items-center gap-3 justify-between">
                 <div className="md:flex hidden items-center gap-3">
                     <a href="#" className="hover:text-gray-200">
