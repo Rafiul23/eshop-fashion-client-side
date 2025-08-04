@@ -5,8 +5,8 @@ import { FaXTwitter } from "react-icons/fa6";
 const TopBar = () => {
     return (
         <div className="bg-[#ff084a] py-3 text-white">
-            <div className="container mx-auto flex items-center gap-3 justify-between">
-                <div className="flex items-center gap-3">
+            <div className="container px-2 mx-auto flex items-center gap-3 justify-between">
+                <div className="md:flex hidden items-center gap-3">
                     <a href="#" className="hover:text-gray-200">
                         <FaFacebookF className="h-5 w-5"/>
                     </a>
@@ -17,10 +17,10 @@ const TopBar = () => {
                         <FaXTwitter className="h-5 w-5"/>
                     </a>
                 </div>
-                <div className="text-center text-sm font-semibold">
+                <div className="text-center text-sm font-semibold flex-grow">
                     <p>We deliver products countrywide - Fast and reliable!</p>
                 </div>
-                <div className="text-sm text-center font-bold">
+                <div className="text-sm text-center hidden md:block font-bold">
                     <a href="tel:+8801980114434" className="hover:text-gray-200">
                         +8801980-114434
                     </a>
