@@ -1,8 +1,8 @@
 import { Link } from "react-router";
 import { FaRegUser } from "react-icons/fa";
 import { BsCart } from "react-icons/bs";
-import { GoSearch } from "react-icons/go";
 import { AiOutlineMenu } from "react-icons/ai";
+import SearchBar from "../../components/SearchBar";
 
 const Navbar = () => {
   return (
@@ -25,9 +25,7 @@ const Navbar = () => {
             <BsCart className="hover:text-alpha h-6 w-6 text-gray-700" />
             <span className="absolute bg-alpha text-white text-xs rounded-full px-1 py-0.5 -top-2 -right-4">4+</span>
             </button>
-            <button>
-              <GoSearch className=" text-gray-700 text-3xl hover:text-alpha"/>
-            </button>
+            <SearchBar />
             <button className="md:hidden"><AiOutlineMenu className="text-gray-700 text-xl" /></button>
         </div>
       </nav>
