@@ -10,6 +10,16 @@ const CartDrawer = ({isDrawerOpen, setIsDrawerOpen}) => {
         <IoMdCloseCircle className="text-red-700 text-3xl" />
       </button>
     </div>
+
+    <div className="flex-grow p-4 overflow-y-auto">
+      <h2 className="text-xl font-semibold mb-4">Your Cart</h2>
+
+    </div>
+
+    <div className="p-4 bg-white sticky bottom-0">
+      <button className="bg-alpha text-white w-full font-medium hover:bg-[#ff2f67] rounded-lg transition py-2">Checkout</button>
+      <p className="mt-2 text-gray-600 text-center">Shipping, taxes, and discount codes calculated at checkout</p>
+    </div>
   </div>;
 };
 
