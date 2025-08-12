@@ -5,10 +5,13 @@ import { AiOutlineMenu } from "react-icons/ai";
 import SearchBar from "../../components/SearchBar";
 import CartDrawer from "../../components/Layouts/CartDrawer";
 import { useState } from "react";
+import { IoMdCloseCircle } from "react-icons/io";
+
 
 const Navbar = () => {
 
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
+  const [navDrawerOpen, setNavDrawerOpen] = useState(false);
 
   return (
     <div className="border-b border-gray-300">
@@ -33,10 +36,29 @@ const Navbar = () => {
             <div className="overflow-hidden">
               <SearchBar />
             </div>
-            <button className="md:hidden"><AiOutlineMenu className="text-gray-700 text-xl" /></button>
+            <button onClick={()=> setNavDrawerOpen(!navDrawerOpen)} className="md:hidden"><AiOutlineMenu className="text-gray-700 text-xl" /></button>
         </div>
       </nav>
       <CartDrawer isDrawerOpen={isDrawerOpen} setIsDrawerOpen={setIsDrawerOpen} />
+      <div className={`fixed top-0 left-0 w-1/2 md:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 z-50 ${navDrawerOpen ? "translate-x-0" : "-translate-x-full"}`}>
+      
+      <div className="flex justify-end p-4">
+        <button onClick={()=> setNavDrawerOpen(!navDrawerOpen)}>
+          <IoMdCloseCircle className="text-red-700 text-3xl"/>
+        </button>
+      </div>
+
+      <div className="p-4 uppercase">
+        <h2 className="text-xl font-semibold mb-4">Menu</h2>
+        <nav>
+          <Link to='/' onClick={()=> setNavDrawerOpen(!navDrawerOpen)} className="block text-gray-600 hover:text-alpha border-b mb-4">Men</Link>
+          <Link to='/' onClick={()=> setNavDrawerOpen(!navDrawerOpen)} className="block text-gray-600 hover:text-alpha border-b mb-4">Women</Link>
+          <Link to='/' onClick={()=> setNavDrawerOpen(!navDrawerOpen)} className="block text-gray-600 hover:text-alpha border-b mb-4">Top Wear</Link>
+          <Link to='/' onClick={()=> setNavDrawerOpen(!navDrawerOpen)} className="block text-gray-600 hover:text-alpha border-b mb-4">Bottom Wear</Link>
+        </nav>
+      </div>
+
+      </div>
     </div>
   );
 };
