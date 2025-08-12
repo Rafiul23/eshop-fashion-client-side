@@ -6,8 +6,8 @@ import { FaPhoneAlt } from "react-icons/fa";
 
 const Footer = () => {
     return (
-        <footer className="border-t py-12">
-            <div className="container mx-auto grid grid-cols-1 md:grid-cols-4 gap-4 px-4 lg:px-0">
+        <footer className="border-t pt-12">
+            <div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 px-4 lg:px-0">
                 {/* newslatter form */}
                 <div>
                     <h3 className="text-lg text-gray-800 mb-4">Newslatter</h3>
@@ -85,7 +85,7 @@ const Footer = () => {
 
             </div>
 
-            <div className="container mx-auto my-12 px-4 border-t border-gray-200 pt-6">
+            <div className="container mx-auto my-4 px-4 border-t border-gray-200 pt-6">
                 <p className="text-gray-600 text-center">@ 2025, All Rights Reserved.</p>
             </div>
         </footer>
