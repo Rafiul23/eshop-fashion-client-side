@@ -37,6 +37,26 @@ const Footer = () => {
                         </li>
                     </ul>
                 </div>
+
+                {/* Support links */}
+                 <div>
+                    <h3 className="text-lg text-gray-800 mb-4">Support</h3>
+                    <ul className="space-y-2 text-gray-600">
+                        <li className="hover:text-gray-600 transition-colors">
+                            <Link to='/'>Contact Us</Link>
+                        </li>
+                        <li className="hover:text-gray-600 transition-colors">
+                            <Link to='/'>About Us</Link>
+                        </li>
+                        <li className="hover:text-gray-600 transition-colors">
+                            <Link to='/'>FAQs</Link>
+                        </li>
+                        <li className="hover:text-gray-600 transition-colors">
+                            <Link to='/'>Featurs</Link>
+                        </li>
+                    </ul>
+                </div>
+
             </div>
         </footer>
     );
