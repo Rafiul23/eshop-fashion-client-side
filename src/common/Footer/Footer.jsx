@@ -1,4 +1,8 @@
 import { Link } from "react-router";
+import { FaFacebookF } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
+
 
 const Footer = () => {
     return (
@@ -55,6 +59,22 @@ const Footer = () => {
                             <Link to='/'>Featurs</Link>
                         </li>
                     </ul>
+                </div>
+
+                {/* follow us */}
+                <div>
+                    <h3 className="text-lg text-gray-800 mb-4">Follow Us</h3>
+                    <div className="flex items-center gap-4 mb-4">
+                        <a href="https://www.facebook.com" target="_blank" className="hover:text-gray-500">
+                        <FaFacebookF />
+                        </a>
+                        <a href="https://www.instagram.com" target="_blank" className="hover:text-gray-500">
+                        <FaInstagram />
+                        </a>
+                        <a href="https://www.x.com" target="_blank" className="hover:text-gray-500">
+                        <FaXTwitter />
+                        </a>
+                    </div>
                 </div>
 
             </div>
