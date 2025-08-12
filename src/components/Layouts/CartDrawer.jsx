@@ -18,7 +18,7 @@ const CartDrawer = ({isDrawerOpen, setIsDrawerOpen}) => {
     </div>
     
     <div className="p-4 bg-white sticky bottom-0">
-      <button className="bg-alpha text-white w-full font-medium hover:bg-[#ff2f67] rounded-lg transition py-2">Checkout</button>
+      <button className="bg-alpha text-white w-full font-medium hover:bg-beta rounded-lg transition py-2">Checkout</button>
       <p className="mt-2 text-gray-600 text-center">Shipping, taxes, and discount codes calculated at checkout</p>
     </div>
   </div>;
