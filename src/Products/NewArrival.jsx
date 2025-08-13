@@ -2,6 +2,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
+import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
@@ -76,11 +77,16 @@ const NewArrival = () => {
         >
           {newArrivals.map((product) => (
             <SwiperSlide key={product._id}>
-              <img
+              <div className="relative">
+                <img
                 src={product.image}
                 className="w-full my-10"
                 alt={product.name}
               />
+              <div className="bg-white opacity-70 p-4 rounded-xl absolute bottom-4 left-28">
+                <h2 className="text-xl text-alpha font-medium">{product.name}</h2>
+              </div>
+              </div>
             </SwiperSlide>
           ))}
         </Swiper>
