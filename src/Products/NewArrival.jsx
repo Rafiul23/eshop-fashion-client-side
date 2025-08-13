@@ -6,6 +6,7 @@ import "swiper/css/navigation";
 
 // import required modules
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Link } from "react-router";
 
 const newArrivals = [
   {
@@ -65,7 +66,7 @@ const NewArrival = () => {
 
       <div className="container mx-auto">
         <Swiper
-          slidesPerView={3}
+          
           spaceBetween={30}
           autoplay={true}
           navigation={true}
@@ -74,6 +75,17 @@ const NewArrival = () => {
           }}
           modules={[Pagination, Autoplay, Navigation]}
           className="mySwiper"
+          breakpoints={{
+            0: {
+              slidesPerView: 1,
+            },
+            640: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          }}
         >
           {newArrivals.map((product) => (
             <SwiperSlide key={product._id}>
@@ -83,9 +95,12 @@ const NewArrival = () => {
                 className="w-full my-10"
                 alt={product.name}
               />
-              <div className="bg-white opacity-70 p-4 rounded-xl absolute bottom-4 left-28">
-                <h2 className="text-xl text-alpha font-medium">{product.name}</h2>
+              <Link to={`/product/${product._id}`}>
+              <div className="px-4 py-2 text-alpha bg-white rounded absolute bottom-4 left-4">
+                <h2 className="text-xl font-semibold">{product.name}</h2>
+                <p className="font-medium">Price: {product.price}</p>
               </div>
+              </Link>
               </div>
             </SwiperSlide>
           ))}
