@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { BsCart } from "react-icons/bs";
 
 const selectedProduct = {
@@ -22,6 +23,15 @@ const selectedProduct = {
 };
 
 const BestSeller = () => {
+
+    const [mainImage, setMainImage] = useState('');
+
+    useEffect(()=> {
+        if(selectedProduct?.images?.length > 0){
+            setMainImage(selectedProduct.images[0].url);
+        }
+    }, [])
+
   return (
     <div className="py-20">
       <h2 className="lg:text-5xl md:text-4xl text-3xl text-alpha font-bold text-center py-4">
@@ -42,6 +52,7 @@ const BestSeller = () => {
                   className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
                   src={image.url}
                   alt={image.altText}
+                  onClick={() => setMainImage(image.url)}
                 />
               ))}
             </div>
@@ -50,7 +61,7 @@ const BestSeller = () => {
             <div className="md:w-1/2">
               <div className="mb-4">
                 <img
-                  src={selectedProduct.images[0]?.url}
+                  src={mainImage}
                   alt={selectedProduct.images[0]?.altText}
                   className="w-full object-cover h-auto rounded-lg"
                 />
