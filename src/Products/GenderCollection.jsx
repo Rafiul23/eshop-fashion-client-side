@@ -5,7 +5,7 @@ import { FaArrowRight } from "react-icons/fa";
 
 const GenderCollection = () => {
     return (
-        <div className="py-10">
+        <div className="py-20">
             <h2 className="lg:text-5xl md:text-4xl text-3xl text-alpha font-bold text-center py-4">Shop by Style, Made for You</h2>
             <p className="text-xl font-medium text-gray-600 text-center mb-4">Explore our men’s and women’s collections—curated to match your unique vibe.</p>
 

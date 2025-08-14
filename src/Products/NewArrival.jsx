@@ -55,7 +55,7 @@ const newArrivals = [
 
 const NewArrival = () => {
   return (
-    <div className="py-10">
+    <div className="py-20">
       <h2 className="lg:text-5xl md:text-4xl text-3xl text-alpha font-bold text-center py-4">
         Fresh Finds, Just In
       </h2>
