@@ -25,12 +25,25 @@ const selectedProduct = {
 const BestSeller = () => {
 
     const [mainImage, setMainImage] = useState('');
+    const [selectedSize, setSelectedSize] = useState('');
+    const [selectedColor, setSelectedColor] = useState('');
+    const [quantity, setQuantity] = useState(1);
+    const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
     useEffect(()=> {
         if(selectedProduct?.images?.length > 0){
             setMainImage(selectedProduct.images[0].url);
         }
     }, [])
+
+    const handleQuantity = (action) => {
+      if(action === "plus" ){
+        setQuantity(quantity + 1);
+      } 
+      if(action === "minus" && quantity > 1){
+        setQuantity(quantity - 1);
+      }
+    }
 
   return (
     <div className="py-20">
@@ -49,7 +62,7 @@ const BestSeller = () => {
               {selectedProduct.images.map((image, index) => (
                 <img
                   key={index}
-                  className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                  className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${mainImage === image.url ? "border-black" : "border-gray-400"}`}
                   src={image.url}
                   alt={image.altText}
                   onClick={() => setMainImage(image.url)}
@@ -73,9 +86,10 @@ const BestSeller = () => {
               {selectedProduct.images.map((image, index) => (
                 <img
                   key={index}
-                  className="w-20 h-20 object-cover rounded-lg cursor-pointer border"
+                  className={`w-20 h-20 object-cover rounded-lg cursor-pointer border ${mainImage === image.url ? "border-black" : "border-gray-400"}`}
                   src={image.url}
                   alt={image.altText}
+                  onClick={()=> setMainImage(image.url)}
                 />
               ))}
             </div>
@@ -102,7 +116,8 @@ const BestSeller = () => {
                   {selectedProduct.colors.map((color) => (
                     <button
                       key={color}
-                      className="w-8 h-8 rounded-full border"
+                      onClick={()=> setSelectedColor(color)}
+                      className={`w-8 h-8 rounded-full border ${selectedColor === color ? "border-4 border-alpha" : "border-gray-400"}`}
                       style={{
                         backgroundColor: color.toLocaleLowerCase(),
                         filter: "brightness(0.5)",
@@ -116,7 +131,7 @@ const BestSeller = () => {
                 <p className="text-lg text-gray-700">Sizes:</p>
                 <div className="flex gap-2 mt-2">
                   {selectedProduct.sizes.map((size) => (
-                    <button key={size} className="px-4 py-2 rounded border">
+                    <button onClick={()=> setSelectedSize(size)} key={size} className={`px-4 py-2 rounded border ${selectedSize === size ? "bg-alpha text-white border-4 border-black" : ""}`}>
                       {size}
                     </button>
                   ))}
@@ -126,9 +141,9 @@ const BestSeller = () => {
               <div className="mb-4">
                 <p className="text-gray-700 text-xl">Quantity:</p>
                 <div className="flex items-center gap-4 mt-2">
-                  <button className="px-2 bg-gray-200 rounded text-lg cursor-pointer">+</button>
-                  <span className="text-lg">1</span>
-                  <button className="px-2 bg-gray-200 rounded text-lg cursor-pointer">-</button>
+                  <button onClick={()=> handleQuantity("plus")} className="px-2 bg-gray-200 rounded text-lg cursor-pointer">+</button>
+                  <span className="text-lg">{quantity}</span>
+                  <button onClick={()=> handleQuantity("minus")} className="px-2 bg-gray-200 rounded text-lg cursor-pointer">-</button>
                 </div>
               </div>
 
