@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { BsCart } from "react-icons/bs";
 import Swal from "sweetalert2";
+import ProductGrid from "./ProductGrid";
 
 const selectedProduct = {
   name: "Stylish Jacket",
@@ -22,6 +23,39 @@ const selectedProduct = {
     },
   ],
 };
+
+ const similarProducts = [
+  {
+    _id: 1,
+    name: 'Product 1',
+    price: 100,
+    images: "https://picsum.photos/200?random=3"
+  },
+  {
+    _id: 2,
+    name: 'Product 2',
+    price: 100,
+    images: "https://picsum.photos/200?random=4"
+  },
+  {
+    _id: 3,
+    name: 'Product 3',
+    price: 100,
+    images: "https://picsum.photos/200?random=5"
+  },
+  {
+    _id: 4,
+    name: 'Product 4',
+    price: 100,
+    images: "https://picsum.photos/200?random=6"
+  },
+  {
+    _id: 5,
+    name: 'Product 5',
+    price: 100,
+    images: "https://picsum.photos/200?random=7"
+  }
+ ]
 
 const BestSeller = () => {
   const [mainImage, setMainImage] = useState("");
@@ -201,7 +235,11 @@ const BestSeller = () => {
               <button
                 onClick={handleAddToCart}
                 disabled={isButtonDisabled}
-                className={`bg-alpha hover:bg-beta text-white px-4 py-2 rounded-lg w-full ${isButtonDisabled ? "cursor-not-allowed opacity-50" : "hover:bg-beta"}`}
+                className={`bg-alpha hover:bg-beta text-white px-4 py-2 rounded-lg w-full ${
+                  isButtonDisabled
+                    ? "cursor-not-allowed opacity-50"
+                    : "hover:bg-beta"
+                }`}
               >
                 {isButtonDisabled ? "Adding ..." : "Add to Cart"}
               </button>
@@ -224,6 +262,15 @@ const BestSeller = () => {
             </div>
           </div>
         </div>
+
+        {/* you may like */}
+        <div className="mt-20">
+          <h2 className="lg:text-5xl md:text-4xl text-3xl text-alpha font-bold text-center py-4">
+            You May Like
+          </h2>
+          <ProductGrid products={similarProducts}></ProductGrid>
+        </div>
+
       </div>
     </div>
   );
