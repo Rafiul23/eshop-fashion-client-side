@@ -1,9 +1,10 @@
 import { Link } from "react-router";
+import featured from '../assets/my-featued.jpg';
 
 const FeaturedCollection = () => {
     return (
         <section className="py-10 px-4 lg:px-0">
-            <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center bg-rose-100 rounded-2xl">
+            <div className="container mx-auto flex flex-col-reverse lg:flex-row items-center bg-rose-100 rounded-3xl">
             {/* left content */}
 
             <div className="lg:w-1/2 w-full p-8 text-center lg:text-left">
@@ -22,6 +23,12 @@ const FeaturedCollection = () => {
                 </button>
                 </Link>
             </div>
+
+            {/* right content */}
+            <div className="lg:w-1/2 w-full">
+                <img src={featured} alt="featured collection" className="w-full h-full object-cover lg:rounded-tr-3xl lg:rounded-br-3xl" />
+            </div>
+
             </div>
         </section>
     );
