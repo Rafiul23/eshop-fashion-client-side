@@ -1,5 +1,6 @@
 import Hero from "../../components/Hero";
 import BestSeller from "../../Products/BestSeller";
+import FeaturedCollection from "../../Products/FeaturedCollection";
 import GenderCollection from "../../Products/GenderCollection";
 import NewArrival from "../../Products/NewArrival";
 import WomenTop from "../../Products/WomenTop";
@@ -12,6 +13,7 @@ const Home = () => {
             <NewArrival></NewArrival>
             <BestSeller></BestSeller>
             <WomenTop></WomenTop>
+            <FeaturedCollection></FeaturedCollection>
         </div>
     );
 };
