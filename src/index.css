@@ -6,8 +6,22 @@
     --color-beta: #ff2f67;
 }
 
+html, body {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+
 #root{
     font-family: "Montserrat", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    margin: 0;
+    padding: 0;
+    height: 100%;       /* fill viewport */
+    display: flex;     /* let MainLayout flex rules work properly */
+    flex-direction: column;
 }
+
