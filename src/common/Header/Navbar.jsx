@@ -19,7 +19,7 @@ const Navbar = () => {
         <div>
             <Link to='/' className="text-alpha text-2xl font-bold">E-Shop Fashion</Link>
         </div>
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-16 grow justify-center">
             <Link to='/' className="text-gray-700 hover:text-alpha font-medium uppercase">Men</Link>
             <Link to='/' className="text-gray-700 hover:text-alpha font-medium uppercase">Women</Link>
             <Link to='/' className="text-gray-700 hover:text-alpha font-medium uppercase">Top Wear</Link>
