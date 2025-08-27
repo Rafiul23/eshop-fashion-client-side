@@ -1,3 +1,4 @@
+import MyOrders from "../MyOrders/MyOrders";
 
 const Profile = () => {
     return (
@@ -13,7 +14,9 @@ const Profile = () => {
                         <button className="w-full bg-alpha text-white hover:bg-beta px-4 py-2 rounded">Logout</button>
                     </div>
                     {/* right side */}
-                    <div></div>
+                    <div className="w-full md:w-2/3 lg:w-3/4">
+                    <MyOrders></MyOrders>
+                    </div>
                 </div>
             </div>
         </div>
