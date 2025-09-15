@@ -4,6 +4,7 @@ import MainLayout from './../components/Layouts/MainLayout';
 import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Profile from "../pages/Profile/Profile";
+import CollectionPage from "../pages/CollectionPage/CollectionPage";
 
 const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ const router = createBrowserRouter([
         {
           path: '/profile',
           element: <Profile></Profile>
+        },
+        {
+          path: '/collections/:collection',
+          element: <CollectionPage></CollectionPage>
         }
     ],
   },
