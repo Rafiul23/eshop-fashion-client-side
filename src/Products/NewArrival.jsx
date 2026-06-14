@@ -7,53 +7,20 @@ import "swiper/css/navigation";
 // import required modules
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 import { Link } from "react-router";
+import { useEffect, useState } from "react";
 
-const newArrivals = [
-  {
-    _id: 1,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=1",
-  },
-  {
-    _id: 2,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=2",
-  },
-  {
-    _id: 3,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=3",
-  },
-  {
-    _id: 4,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=4",
-  },
-  {
-    _id: 5,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=5",
-  },
-  {
-    _id: 6,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=6",
-  },
-  {
-    _id: 7,
-    name: "Stylish Jacket",
-    price: 120,
-    image: "https://picsum.photos/200?random=7",
-  },
-];
+
 
 const NewArrival = () => {
+
+  const [newArrivals, setNewArrivals] = useState([]);
+
+  useEffect(()=>{
+    fetch('/public/products.json')
+    .then(res => res.json())
+    .then(data => setNewArrivals(data))
+  }, [])
+
   return (
     <div className="py-20">
       <h2 className="lg:text-5xl md:text-4xl text-3xl text-alpha font-bold text-center py-4">

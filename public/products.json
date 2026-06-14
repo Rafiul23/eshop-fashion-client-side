@@ -1,0 +1,50 @@
+[
+  {
+    "_id": 1,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=1"
+  },
+  {
+    "_id": 2,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=2"
+  },
+  {
+    "_id": 3,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=3"
+  },
+  {
+    "_id": 4,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=4"
+  },
+  {
+    "_id": 5,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=5"
+  },
+  {
+    "_id": 6,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=6"
+  },
+  {
+    "_id": 7,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=7"
+  },
+  {
+    "_id": 8,
+    "name": "Stylish Jacket",
+    "price": 120,
+    "image": "https://picsum.photos/200?random=8"
+  }
+]

@@ -11,6 +11,7 @@ html, body {
   padding: 0 !important;
   box-sizing: border-box;
   height: 100%;
+  min-height: 100%;
 }
 
 
@@ -20,7 +21,8 @@ html, body {
     font-style: normal;
     margin: 0;
     padding: 0;
-    height: 100%;       /* fill viewport */
+    height: 100%;       /* fill viewport */ 
+    min-height: 100dvh;
     display: flex;     /* let MainLayout flex rules work properly */
     flex-direction: column;
 }
