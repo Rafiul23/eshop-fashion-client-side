@@ -35,7 +35,7 @@ const FilterSideBar = () => {
         minPrice: params.minPrice || 0,
         maxPrice: params.maxPrice || 100
     });
-    
+
     setPriceRange([0, params.maxPrice || 100]);
 
     }, [searchParams])
@@ -43,8 +43,19 @@ const FilterSideBar = () => {
     
 
     return (
-        <div>
-            
+        <div className="p-4">
+            <h3 className="text-xl font-semibold text-gray-800 mb-4">Filter</h3>
+            {/* category filter */}
+            <div className="mb-6">
+                <label className="text-gray-600 font-medium mb-2">Category</label>
+                {
+                    categories.map((category)=> (
+                        <div key={category} className="flex items-center mb-1">
+                            
+                        </div>
+                    ))
+                }
+            </div>
         </div>
     );
 };
