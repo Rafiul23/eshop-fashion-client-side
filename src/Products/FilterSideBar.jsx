@@ -47,11 +47,12 @@ const FilterSideBar = () => {
             <h3 className="text-xl font-semibold text-gray-800 mb-4">Filter</h3>
             {/* category filter */}
             <div className="mb-6">
-                <label className="text-gray-600 font-medium mb-2">Category</label>
+                <label className="text-gray-600 font-medium mb-2 block">Category</label>
                 {
                     categories.map((category)=> (
                         <div key={category} className="flex items-center mb-1">
-                            
+                            <input type="radio" name="category" className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300" id="" />
+                            <span className="text-gray-700">{category}</span>
                         </div>
                     ))
                 }
