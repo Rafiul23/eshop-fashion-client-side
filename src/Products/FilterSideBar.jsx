@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useSearchParams } from "react-router";
 
 const FilterSideBar = () => {
@@ -22,6 +22,26 @@ const FilterSideBar = () => {
     const brands = ['Urban Threads', 'Modern Fit', 'Street Style', 'Beach Breeze', 'Fashionista', 'ChicStyle'];
     const genders = ['Men', 'Women'];
     
+    useEffect(()=> {
+        const params = Object.fromEntries([...searchParams])
+
+        setFilters({
+        category: params.category || "",
+        gender: params.gender || "",
+        color: params.color || "",
+        size: params.size ? params.size.split(',') : [],
+        material: params.material ? params.material.split(',') : [],
+        brand: params.brand ? params.brand.split(',') : [],
+        minPrice: params.minPrice || 0,
+        maxPrice: params.maxPrice || 100
+    });
+    
+    setPriceRange([0, params.maxPrice || 100]);
+
+    }, [searchParams])
+
+    
+
     return (
         <div>
             
