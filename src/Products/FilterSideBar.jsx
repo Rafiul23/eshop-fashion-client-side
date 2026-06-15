@@ -72,6 +72,21 @@ const FilterSideBar = () => {
                 }
             </div>
 
+            {/* color filter */}
+            <div className="mb-6">
+                <label className="text-gray-600 font-medium mb-2 block">Color</label>
+
+                <div className="flex flex-wrap gap-2">
+                    {
+                    colors.map((color)=> (
+                        <button key={color} name="color" className="w-8 h-8 rounded-full border border-gray-300 cursor-pointer transition hover:scale-105" style={{backgroundColor: color.toLocaleLowerCase()}}>
+                        </button>
+                    ))
+                }
+                </div>
+                
+            </div>
+
         </div>
     );
 };
