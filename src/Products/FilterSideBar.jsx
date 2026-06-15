@@ -113,6 +113,19 @@ const FilterSideBar = () => {
                 }
             </div>
 
+            {/* materials filter */}
+            <div className="mb-6">
+                <label className="text-gray-600 font-medium mb-2 block">Materials</label>
+                {
+                    materials.map((material)=> (
+                        <div key={material} className="flex items-center mb-1">
+                            <input type="checkbox" name="material" className="mr-2 h-4 w-4 text-blue-500 focus:ring-blue-400 border-gray-300" id="" />
+                            <span className="text-gray-700">{material}</span>
+                        </div>
+                    ))
+                }
+            </div>
+
         </div>
     );
 };
