@@ -1,9 +1,14 @@
 import { IoMdCloseCircle } from "react-icons/io";
 import CartContent from "./CartContent";
+import { useNavigate } from "react-router";
 
 
 const CartDrawer = ({isDrawerOpen, setIsDrawerOpen}) => {
-  
+
+  const navigate = useNavigate();
+  const handleCheckout = ()=>{
+    navigate('/checkout');
+  }
 
   return <div className={`fixed top-0 right-0 w-11/12 md:w-1/2 lg:w-1/3 h-full bg-white shadow-lg transform transition-transform duration-300 flex flex-col z-50 ${isDrawerOpen ? "translate-x-0" : "translate-x-full"}`}>
     <div className="flex justify-end p-4">
@@ -18,7 +23,9 @@ const CartDrawer = ({isDrawerOpen, setIsDrawerOpen}) => {
     </div>
     
     <div className="p-4 bg-white sticky bottom-0">
-      <button className="bg-alpha text-white w-full font-medium hover:bg-beta rounded-lg transition py-2">Checkout</button>
+      
+      <button onClick={handleCheckout} className="bg-alpha text-white w-full font-medium hover:bg-beta rounded-lg transition py-2">Checkout</button>
+      
       <p className="mt-2 text-gray-600 text-center">Shipping, taxes, and discount codes calculated at checkout</p>
     </div>
   </div>;

@@ -1,8 +1,20 @@
+import { useSearchParams } from "react-router";
 
 const SortOptions = () => {
+    const [searchParams, setSearchParam] = useSearchParams();
+    const handleSortChange = e =>{
+        const sortBy = e.target.value;
+        searchParams.set("sortBy", sortBy);
+        setSearchParam(searchParams);
+    }
     return (
-        <div>
-            
+        <div className="mb-4 flex justify-end items-center">
+            <select name="" id="sort" className="border p-2 rounded-md focus:outline-none" onChange={handleSortChange} value={searchParams.get("sortBy") || ""}>
+                <option value="">Default</option>
+                <option value="priceAsc">Price: Low to High</option>
+                <option value="priceDesc">Price: High to Low</option>
+                <option value="popularity">Popularity</option>
+            </select>
         </div>
     );
 };

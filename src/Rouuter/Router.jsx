@@ -5,6 +5,8 @@ import Login from "../pages/Login/Login";
 import SignUp from "../pages/SignUp/SignUp";
 import Profile from "../pages/Profile/Profile";
 import CollectionPage from "../pages/CollectionPage/CollectionPage";
+import ProductDetails from "../Products/ProductDetails";
+import Checkout from "../pages/Checkout/Checkout";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +32,14 @@ const router = createBrowserRouter([
         {
           path: '/collections/:collection',
           element: <CollectionPage></CollectionPage>
+        },
+        {
+          path: '/product/:id',
+          element: <ProductDetails></ProductDetails>
+        },
+        {
+          path: '/checkout',
+          element: <Checkout></Checkout>
         }
     ],
   },
